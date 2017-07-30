@@ -31,35 +31,35 @@
             this.components = new System.ComponentModel.Container();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.arrowKeyGroupBox = new System.Windows.Forms.GroupBox();
+            this.leftButton = new System.Windows.Forms.Button();
+            this.downButton = new System.Windows.Forms.Button();
+            this.topButton = new System.Windows.Forms.Button();
+            this.rightButton = new System.Windows.Forms.Button();
             this.startGroupBox = new System.Windows.Forms.GroupBox();
             this.goButton = new System.Windows.Forms.Button();
             this.levelComboBox = new System.Windows.Forms.ComboBox();
             this.lableComboBox = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enemyPictureBox4 = new System.Windows.Forms.PictureBox();
             this.enemyPictureBox3 = new System.Windows.Forms.PictureBox();
             this.enemyPictureBox2 = new System.Windows.Forms.PictureBox();
             this.enemyPictureBox1 = new System.Windows.Forms.PictureBox();
             this.targetPictureBox = new System.Windows.Forms.PictureBox();
-            this.leftButton = new System.Windows.Forms.Button();
-            this.downButton = new System.Windows.Forms.Button();
-            this.topButton = new System.Windows.Forms.Button();
-            this.rightButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TopPanel.SuspendLayout();
             this.arrowKeyGroupBox.SuspendLayout();
             this.startGroupBox.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.targetPictureBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -75,6 +75,7 @@
             // 
             // arrowKeyGroupBox
             // 
+            this.arrowKeyGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.arrowKeyGroupBox.Controls.Add(this.leftButton);
             this.arrowKeyGroupBox.Controls.Add(this.downButton);
             this.arrowKeyGroupBox.Controls.Add(this.topButton);
@@ -84,6 +85,58 @@
             this.arrowKeyGroupBox.Size = new System.Drawing.Size(149, 103);
             this.arrowKeyGroupBox.TabIndex = 3;
             this.arrowKeyGroupBox.TabStop = false;
+            // 
+            // leftButton
+            // 
+            this.leftButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.leftButton.AutoSize = true;
+            this.leftButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.leftButton.Image = global::game1.Properties.Resources.leftImage;
+            this.leftButton.Location = new System.Drawing.Point(6, 55);
+            this.leftButton.Name = "leftButton";
+            this.leftButton.Size = new System.Drawing.Size(46, 46);
+            this.leftButton.TabIndex = 3;
+            this.leftButton.UseVisualStyleBackColor = true;
+            this.leftButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // downButton
+            // 
+            this.downButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.downButton.AutoSize = true;
+            this.downButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.downButton.Image = global::game1.Properties.Resources.downImage_;
+            this.downButton.Location = new System.Drawing.Point(52, 55);
+            this.downButton.Name = "downButton";
+            this.downButton.Size = new System.Drawing.Size(46, 46);
+            this.downButton.TabIndex = 6;
+            this.downButton.UseVisualStyleBackColor = true;
+            this.downButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // topButton
+            // 
+            this.topButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.topButton.AutoSize = true;
+            this.topButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.topButton.Image = global::game1.Properties.Resources.upImage;
+            this.topButton.Location = new System.Drawing.Point(52, 9);
+            this.topButton.Name = "topButton";
+            this.topButton.Size = new System.Drawing.Size(46, 46);
+            this.topButton.TabIndex = 4;
+            this.topButton.UseVisualStyleBackColor = true;
+            this.topButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // rightButton
+            // 
+            this.rightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rightButton.AutoSize = true;
+            this.rightButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rightButton.Image = global::game1.Properties.Resources.rightImage;
+            this.rightButton.Location = new System.Drawing.Point(97, 55);
+            this.rightButton.Name = "rightButton";
+            this.rightButton.Size = new System.Drawing.Size(46, 46);
+            this.rightButton.TabIndex = 5;
+            this.rightButton.UseVisualStyleBackColor = true;
+            this.rightButton.Click += new System.EventHandler(this.button_Click);
             // 
             // startGroupBox
             // 
@@ -148,45 +201,6 @@
             this.mainPanel.Size = new System.Drawing.Size(559, 332);
             this.mainPanel.TabIndex = 0;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 50;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(559, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // runToolStripMenuItem
-            // 
-            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.runToolStripMenuItem.Text = "&Run";
-            this.runToolStripMenuItem.Click += new System.EventHandler(this.goButton_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
-            // 
             // enemyPictureBox4
             // 
             this.enemyPictureBox4.BackColor = System.Drawing.Color.Navy;
@@ -235,57 +249,44 @@
             this.targetPictureBox.TabIndex = 7;
             this.targetPictureBox.TabStop = false;
             // 
-            // leftButton
+            // timer1
             // 
-            this.leftButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.leftButton.AutoSize = true;
-            this.leftButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.leftButton.Image = global::game1.Properties.Resources.leftImage;
-            this.leftButton.Location = new System.Drawing.Point(6, 55);
-            this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(46, 46);
-            this.leftButton.TabIndex = 3;
-            this.leftButton.UseVisualStyleBackColor = true;
-            this.leftButton.Click += new System.EventHandler(this.button_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // downButton
+            // menuStrip1
             // 
-            this.downButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.downButton.AutoSize = true;
-            this.downButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.downButton.Image = global::game1.Properties.Resources.downImage_;
-            this.downButton.Location = new System.Drawing.Point(52, 55);
-            this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(46, 46);
-            this.downButton.TabIndex = 6;
-            this.downButton.UseVisualStyleBackColor = true;
-            this.downButton.Click += new System.EventHandler(this.button_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(559, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // topButton
+            // fileToolStripMenuItem
             // 
-            this.topButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.topButton.AutoSize = true;
-            this.topButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.topButton.Image = global::game1.Properties.Resources.upImage;
-            this.topButton.Location = new System.Drawing.Point(52, 9);
-            this.topButton.Name = "topButton";
-            this.topButton.Size = new System.Drawing.Size(46, 46);
-            this.topButton.TabIndex = 4;
-            this.topButton.UseVisualStyleBackColor = true;
-            this.topButton.Click += new System.EventHandler(this.button_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
             // 
-            // rightButton
+            // runToolStripMenuItem
             // 
-            this.rightButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rightButton.AutoSize = true;
-            this.rightButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rightButton.Image = global::game1.Properties.Resources.rightImage;
-            this.rightButton.Location = new System.Drawing.Point(97, 55);
-            this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(46, 46);
-            this.rightButton.TabIndex = 5;
-            this.rightButton.UseVisualStyleBackColor = true;
-            this.rightButton.Click += new System.EventHandler(this.button_Click);
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.runToolStripMenuItem.Text = "&Run";
+            this.runToolStripMenuItem.Click += new System.EventHandler(this.goButton_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
             // MainForm
             // 
@@ -300,19 +301,20 @@
             this.Name = "MainForm";
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.TopPanel.ResumeLayout(false);
             this.arrowKeyGroupBox.ResumeLayout(false);
             this.arrowKeyGroupBox.PerformLayout();
             this.startGroupBox.ResumeLayout(false);
             this.startGroupBox.PerformLayout();
             this.mainPanel.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.targetPictureBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

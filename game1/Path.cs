@@ -43,7 +43,7 @@ namespace game1
             if (enemy.Top == 0)
             {
                 //شیب (رندوم ) جدید دریافت می کنیم 
-                SlopeX = generator.Next(-10, 0);
+                SlopeX = generator.Next(-10, 10);
 
                 SlopeY = generator.Next(0, 10);
             }
@@ -53,13 +53,13 @@ namespace game1
                 //شیب (رندوم ) جدید دریافت می کنیم
                 SlopeX = generator.Next(0, 10);
 
-                SlopeY = generator.Next(0, 10);
+                SlopeY = generator.Next(-10, 10);
             }
             //اگر به مرز رسیده
             else if (enemy.Top==maxTop)
             {
                 //شیب (رندوم ) جدید دریافت می کنیم
-                SlopeX = generator.Next(0,10);
+                SlopeX = generator.Next(-10,10);
 
                 SlopeY = generator.Next(-10,0);
             }
@@ -69,7 +69,7 @@ namespace game1
                 //شیب (رندوم ) جدید دریافت می کنیم
                 SlopeX = generator.Next(-10,0);
 
-                SlopeY = generator.Next(0,10);
+                SlopeY = generator.Next(-10,10);
 
             }
 

@@ -5,16 +5,16 @@ namespace game1
     public partial class MainForm : System.Windows.Forms.Form
     {
         //enemyPictureBox1 برای تعیین مسیر حرکت Path از نوع کلاس path1 تعریف 
-        public Path Path1 = new Path(5,2);
+        public Path Path1 = new Path(1,2);
         
         //enemyPictureBox2 برای تعیین مسیر حرکت Path از نوع کلاس path2 تعریف 
         public Path Path2 = new Path(-3, 4);
        
         //enemyPictureBox3 برای تعیین مسیر حرکت Path از نوع کلاس path3 تعریف 
-        public Path Path3 = new Path(1, -5);
+        public Path Path3 = new Path(5, -6);
        
         //enemyPictureBox4 برای تعیین مسیر حرکت Path از نوع کلاس path4 تعریف 
-        public Path Path4 = new Path(-5, -6);
+        public Path Path4 = new Path(-7, -8);
 
 
         public MainForm()
@@ -299,7 +299,7 @@ namespace game1
         private void resetForm()
         {
 
-            //levelComboBox.Focus();
+            levelComboBox.Focus();
 
             //برای شروع بازی فعال میشود و نیز goButton 
             //فعال می شود enemyPictureBox  برای تعیین تعداد  levelComboBox 
@@ -310,6 +310,11 @@ namespace game1
 
             // غیر فعال می شود timer1 
             timer1.Enabled = false;
+
+            //امکان تغییر سایز فرم فعال می شود
+            MinimizeBox = true;
+
+            MaximizeBox = true;
 
             //در موقعیت پیش فرض ما قرار می گیرند pictureBox 
             targetPictureBox.Left =
@@ -345,6 +350,11 @@ namespace game1
 
             //  فعال و یازی شروع می شود timer1 
             timer1.Enabled = true;
+
+            //امکان تغییر سایز فرم غیر فعال می شود
+            MinimizeBox = false;
+
+            MaximizeBox = false;
 
             //کلیدهای حرکت فعال میشوند
             arrowKeyGroupBox.Enabled = true;
@@ -549,5 +559,9 @@ namespace game1
             }
         }
 
+        private void MainForm_Resize(object sender, System.EventArgs e)
+        {
+            resetForm();
+        }
     }
 }
