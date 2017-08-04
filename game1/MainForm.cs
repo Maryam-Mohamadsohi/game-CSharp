@@ -91,7 +91,7 @@ namespace game1
             }
 
             //   بازی شروع شده 
-            string strLevel = levelComboBox.Text;     //  های فغالenemyPitureBox تعداد
+            string strLevel = levelComboBox.Text;     //  های فعالenemyPitureBox تعداد
 
             switch (strLevel)
             {
@@ -352,6 +352,7 @@ namespace game1
         // فعالenemyPitureBox تعیین تعداد
         private void levelComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            //  های فعالenemyPitureBox تعداد
             string strLevel = levelComboBox.Text;
 
             switch (strLevel)
@@ -492,8 +493,9 @@ namespace game1
                         //  هنوز داخل محدوده است targetPictureBox و
                         if (targetPictureBox.Top > 0)
                         {
-                            //  را یک واحد به بالا انتقال می دهیم targetPictureBox
-                            targetPictureBox.Top--;
+                            //  را 5 واحد به بالا انتقال می دهیم targetPictureBox
+                            targetPictureBox.Top = System.Math.Max
+                                     (0, targetPictureBox.Top - 5);
                         }
 
                         break;
@@ -505,8 +507,9 @@ namespace game1
                         //  هنوز داخل محدوده است targetPictureBox و
                         if (targetPictureBox.Left < intMaxLeft)
                         {
-                            //  را یک واحد به راست انتقال می دهیم targetPictureBox
-                            targetPictureBox.Left++;
+                            //  را 5 واحد به راست انتقال می دهیم targetPictureBox
+                            targetPictureBox.Left=System.Math.Min
+                                    (intMaxLeft, targetPictureBox.Left + 5);
                         }
 
                         break;
@@ -518,8 +521,9 @@ namespace game1
                         //  هنوز داخل محدوده است targetPictureBox و
                         if (targetPictureBox.Left > 0)
                         {
-                            //  را یک واحد به چپ انتقال می دهیم targetPictureBox
-                            targetPictureBox.Left--;
+                            //  را 5 واحد به چپ انتقال می دهیم targetPictureBox
+                            targetPictureBox.Left= System.Math.Max
+                                    (0, targetPictureBox.Left -5);
                         }
 
                         break;
@@ -531,8 +535,9 @@ namespace game1
                         //  هنوز داخل محدوده است targetPictureBox و
                         if (targetPictureBox.Top < intMaxTop)
                         {
-                            //  را یک واحد به پایین انتقال می دهیم targetPictureBox
-                            targetPictureBox.Top++;
+                            //  را 5 واحد به پایین انتقال می دهیم targetPictureBox
+                            targetPictureBox.Top=System.Math.Min
+                                    (intMaxTop, targetPictureBox.Top + 5);
                         }
 
                         break;
