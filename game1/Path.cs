@@ -2,39 +2,39 @@
 namespace game1
 {
     /// <summary>
-    /// Path of movement class
+    /// کلاس مسیر حرکت
     /// </summary>
     public class Path
     {
         /// <summary>
         /// Constructor overloaded!
         /// </summary>
-        /// <param name="slope of movement along X"> Slope x</param>
-        /// <param name="slope of movement along Y"> Slope y</param>
+        /// <param name="slopeX">x شیب</param>
+        /// <param name="slopeY">y شیب</param>
         public Path(int slopeX,int slopeY)
         {
             SlopeX = slopeX;  
 
             SlopeY = slopeY;
-
         }
 
-        public int SlopeX;
-
-        public int SlopeY;
+        /// <summary>
+        ///x شیب 
+        /// </summary>
+        public int SlopeX { get; set; }
 
         /// <summary>
-        /// Get neew slope if need
+        ///y شیب 
+        /// </summary>
+        public int SlopeY { get; set; }
+        
+        /// <summary>
+        ///دریافت شیب درصورت لزوم
         /// </summary>
         /// <param name="enemy"> enemyPictureBox</param>
         /// <param name="maxTop">The max of top</param>
         /// <param name="maxLeft"> The max of left</param>
-
-
-        //   mainPanel  با مرز enemyPictureBox در تابع زیر در صورتیکه
-        //دریافت میکندPath برخورد کند شیب جدید به صورت رندوم برای 
-
-        public void checkToGetNewSlope
+        public void CheckToGetNewSlope
                 (System.Windows.Forms.PictureBox enemy, int maxTop, int maxLeft)
         {
             System.Random generator = new System.Random();
@@ -70,10 +70,7 @@ namespace game1
                 SlopeX = generator.Next(-10,0);
 
                 SlopeY = generator.Next(-10,10);
-
             }
-
         }
-
     }
 }

@@ -3,6 +3,7 @@
     static class Program
     {
         /// <summary>
+        /// program class
         /// </summary>
         [System.STAThread]
         static void Main()
@@ -19,13 +20,11 @@
                 if (startupForm.IsDisposed == false)
                 {
                     startupForm.Dispose();
-
                 }
 
                 startupForm = null;
 
             }
-
         }
     }
 }

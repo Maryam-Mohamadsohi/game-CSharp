@@ -16,11 +16,9 @@ namespace game1
         //enemyPictureBox4 برای تعیین مسیر حرکت Path از نوع کلاس path4 تعریف 
         public Path Path4 = new Path(-7, -8);
 
-
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         protected override bool ProcessDialogKey(System.Windows.Forms.Keys keyData)
@@ -33,7 +31,6 @@ namespace game1
         }
 
         // با دکمه های کیبورد targetPictureBox تابع حرکت
-
         private void MoveControlByKeys(System.Windows.Forms.Keys keyData,
                             System.Windows.Forms.Control control)
 
@@ -87,14 +84,12 @@ namespace game1
 
         private void timer1_Tick(object sender, System.EventArgs e)
         {
-
             //  فعال باشد بازی شروع نشده و خارج میشود  goButton اگر دکمه
-
             if (goButton.Enabled)
             {
-
                 return;      
             }
+
             //   بازی شروع شده 
             string strLevel = levelComboBox.Text;     //  های فغالenemyPitureBox تعداد
 
@@ -112,14 +107,15 @@ namespace game1
                             //(فراخوانی تابع)
                             //   mainPanel  با مرز enemyPictureBox4 در صورتیکه
                             //دریافت میکندPath4 برخورد کند شیب جدید به صورت رندوم برای
-                            Path4.checkToGetNewSlope(enemyPictureBox4,
+                            Path4.CheckToGetNewSlope(enemyPictureBox4,
                                 maxTop: mainPanel.Height - enemyPictureBox4.Height,
                                     maxLeft: mainPanel.Width - enemyPictureBox4 .Width);
-
                         }
+
                         //به حالت 3 می رود
                         goto case "3";
                     }
+
                 case "3":
                     {
                         // فراخوانی تابع جهت چک برخورد
@@ -132,14 +128,14 @@ namespace game1
                             //(فراخوانی تابع)
                             //   mainPanel  با مرز enemyPictureBox3 در صورتیکه
                             //دریافت میکندPath3 برخورد کند شیب جدید به صورت رندوم برای
-                            Path3.checkToGetNewSlope(enemyPictureBox3,
+                            Path3.CheckToGetNewSlope(enemyPictureBox3,
                                 maxTop: mainPanel.Height - enemyPictureBox3.Height,
                                     maxLeft: mainPanel.Width - enemyPictureBox3.Width);
-
                         }
-
+                        //به حالت 2 می رود
                         goto case "2";
                     }
+
                 case "2":
                     {
                         // فراخوانی تابع جهت چک برخورد
@@ -152,12 +148,11 @@ namespace game1
                             //(فراخوانی تابع)
                             //   mainPanel  با مرز enemyPictureBox2 در صورتیکه
                             //دریافت میکندPath2 برخورد کند شیب جدید به صورت رندوم برای
-                            Path2.checkToGetNewSlope(enemyPictureBox2,
+                            Path2.CheckToGetNewSlope(enemyPictureBox2,
                                 maxTop: mainPanel.Height - enemyPictureBox2.Height,
                                     maxLeft: mainPanel.Width - enemyPictureBox2.Width);
-
                         }
-
+                        //به حالت 1 می رود
                         goto case "1";
                     }
 
@@ -173,10 +168,9 @@ namespace game1
                             //(فراخوانی تابع)
                             //   mainPanel  با مرز enemyPictureBox1 در صورتیکه
                             //دریافت میکندPath1 برخورد کند شیب جدید به صورت رندوم برای
-                            Path1.checkToGetNewSlope(enemyPictureBox1,
+                            Path1.CheckToGetNewSlope(enemyPictureBox1,
                                 maxTop:mainPanel.Height-enemyPictureBox1.Height,
                                     maxLeft:mainPanel.Width-enemyPictureBox1.Width);
-
                         }
 
                         break;
@@ -195,8 +189,8 @@ namespace game1
                 //ومانع خارج شدن از مرز می شود 
                 enemy.Left = 
                     System.Math.Max(0, enemy.Left + path.SlopeX);
-
             }
+
             //در غیر این صورت حرکت به سمت راست می باشد
             else
             {
@@ -213,7 +207,6 @@ namespace game1
                 //ومانع خارج شدن از مرز می شود
                 enemy.Top =
                     System.Math.Max(0, enemy.Top + path.SlopeY);
-
             }
             //در غیر این صورت حرکت به سمت پایین می باشد
             else
@@ -227,7 +220,6 @@ namespace game1
 
         //targetPictureBox با enemy در صورت برخورد 
         //برمیگرداند وپیغام می دهد True تابع مقدار 
-
         public bool CheckAccident(System.Windows.Forms.PictureBox enemy)
         {
             //تعریف متغیر برای تعیین برخورد افقی 
@@ -258,7 +250,6 @@ namespace game1
             {
                 //میکنیم true متغیر مربوطه را
                 boolVerticalAccident = true;
-
             }
             
             //چنانچه برخوردی رخ داده باشد
@@ -284,7 +275,6 @@ namespace game1
                 }
                 else
                 {
-
                     resetForm();
                 }
 
@@ -298,7 +288,6 @@ namespace game1
 
         private void resetForm()
         {
-
             levelComboBox.Focus();
 
             //برای شروع بازی فعال میشود و نیز goButton 
@@ -358,11 +347,9 @@ namespace game1
 
             //کلیدهای حرکت فعال میشوند
             arrowKeyGroupBox.Enabled = true;
-
         }
 
         // فعالenemyPitureBox تعیین تعداد
-
         private void levelComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             string strLevel = levelComboBox.Text;
@@ -395,6 +382,7 @@ namespace game1
 
                         break;
                     }
+
                 case"3":
                     {
                         enemyPictureBox2.Visible = true;
@@ -407,6 +395,7 @@ namespace game1
 
                         break;
                     }
+
                 case"4":
                     {
                         enemyPictureBox2.Visible = true;
@@ -420,11 +409,9 @@ namespace game1
                         break;
                     }
             }
-
         }
 
         //خروج از برنامه 
-
         private void exitToolStripMenuItem_Click_1(object sender, System.EventArgs e)
         {
             System.Windows.Forms.DialogResult enmResult =
@@ -452,7 +439,6 @@ namespace game1
         //*********************************************
         // //حرکت کنترل با کلیدهای کیبورد
         // //کار نمیکند combobox بدلیل وجود
-        //
         //private void MainForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         //{
         //    int x = targetPictureBox.Location.X;
@@ -475,9 +461,7 @@ namespace game1
         //        {
         //            y ++;
         //        }
-
         //    targetPictureBox.Location = new System.Drawing.Point(x, y);
-        
         //}
         //************************************
 
