@@ -2,25 +2,44 @@
 
 namespace game1
 {
+    /// <summary>
+    /// MainForm class
+    /// </summary>
     public partial class MainForm : System.Windows.Forms.Form
     {
-        //enemyPictureBox1 برای تعیین مسیر حرکت Path از نوع کلاس path1 تعریف 
+        /// <summary>
+        /// enemyPictureBox1 برای تعیین مسیر حرکت Path از نوع کلاس path1 تعریف 
+        /// </summary>
         public Path Path1 = new Path(1,2);
         
-        //enemyPictureBox2 برای تعیین مسیر حرکت Path از نوع کلاس path2 تعریف 
+        /// <summary>
+        /// enemyPictureBox2 برای تعیین مسیر حرکت Path از نوع کلاس path2 تعریف 
+        /// </summary>
         public Path Path2 = new Path(-3, 4);
-       
-        //enemyPictureBox3 برای تعیین مسیر حرکت Path از نوع کلاس path3 تعریف 
+        
+        /// <summary>
+        /// enemyPictureBox3 برای تعیین مسیر حرکت Path از نوع کلاس path3 تعریف 
+        /// </summary>
         public Path Path3 = new Path(5, -6);
-       
-        //enemyPictureBox4 برای تعیین مسیر حرکت Path از نوع کلاس path4 تعریف 
+        
+        /// <summary>
+        /// enemyPictureBox4 برای تعیین مسیر حرکت Path از نوع کلاس path4 تعریف 
+        /// </summary>
         public Path Path4 = new Path(-7, -8);
 
+        /// <summary>
+        /// MainForm function
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// ProcessDialogKey
+        /// </summary>
+        /// <param name="keyData">key</param>
+        /// <returns></returns>
         protected override bool ProcessDialogKey(System.Windows.Forms.Keys keyData)
         {
             // فراخوانی تابع جهت 
@@ -29,8 +48,12 @@ namespace game1
 
             return base.ProcessDialogKey(keyData);
         }
-
-        // با دکمه های کیبورد targetPictureBox تابع حرکت
+        
+        /// <summary>
+        /// با دکمه های کیبورد targetPictureBox تابع حرکت
+        /// </summary>
+        /// <param name="keyData">دکمه فشرده شده</param>
+        /// <param name="control">کنترلی که قرار است حرکت کند</param>
         private void MoveControlByKeys(System.Windows.Forms.Keys keyData,
                             System.Windows.Forms.Control control)
 
@@ -82,6 +105,11 @@ namespace game1
             }
         }
 
+        /// <summary>
+        /// timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, System.EventArgs e)
         {
             //  فعال باشد بازی شروع نشده و خارج میشود  goButton اگر دکمه
@@ -177,9 +205,12 @@ namespace game1
                     }
             }
         }
-
-        // حرکت میدهد Path را در مسیر  enemy
-        //  خارج نشود و حتما با مرز برخورد کند mainPanel به طوری که از محدوده 
+        
+        /// <summary>
+        /// حرکت میدهد Path را در مسیر enemy
+        /// </summary>
+        /// <param name="enemy">enemy</param>
+        /// <param name="path">مسیر</param>
         public void MoveEnemy(System.Windows.Forms.PictureBox enemy,Path path)
         {
             //اگر حرکت به سمت چپ باشد 
@@ -217,9 +248,13 @@ namespace game1
                     System.Math.Min(mainPanel.Height - enemy.Height, enemy.Top + path.SlopeY);
             }
         }
-
-        //targetPictureBox با enemy در صورت برخورد 
-        //برمیگرداند وپیغام می دهد True تابع مقدار 
+        
+        /// <summary>
+        /// targetPictureBox با enemy در صورت برخورد 
+        ///برمیگرداند وپیغام می دهد True تابع مقدار
+        /// </summary>
+        /// <param name="enemy"></param>
+        /// <returns></returns>
         public bool CheckAccident(System.Windows.Forms.PictureBox enemy)
         {
             //تعریف متغیر برای تعیین برخورد افقی 
@@ -286,6 +321,9 @@ namespace game1
             }
         }
 
+        /// <summary>
+        /// reset form
+        /// </summary>
         private void resetForm()
         {
             levelComboBox.Focus();
@@ -329,9 +367,13 @@ namespace game1
             enemyPictureBox4.Left = mainPanel.Width - enemyPictureBox4.Width;
 
         }
-
-        // یازی شروع می شود goButton با زدن دکمه
-      private void goButton_Click(object sender, System.EventArgs e)
+        
+        /// <summary>
+        /// شروع بازی
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void goButton_Click(object sender, System.EventArgs e)
         {
             // غیر فعال میشود و نیز goButton 
             //غیر فعال می شود  levelComboBox 
@@ -348,8 +390,12 @@ namespace game1
             //کلیدهای حرکت فعال میشوند
             arrowKeyGroupBox.Enabled = true;
         }
-
-        // فعالenemyPitureBox تعیین تعداد
+        
+        /// <summary>
+        ///enemyPitureBox فعال سازی 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void levelComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             //  های فعالenemyPitureBox تعداد
@@ -411,8 +457,12 @@ namespace game1
                     }
             }
         }
-
-        //خروج از برنامه 
+ 
+        /// <summary>
+        /// خروج از برنامه
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click_1(object sender, System.EventArgs e)
         {
             System.Windows.Forms.DialogResult enmResult =
@@ -438,8 +488,12 @@ namespace game1
         }
 
         //*********************************************
-        // //حرکت کنترل با کلیدهای کیبورد
         // //کار نمیکند combobox بدلیل وجود
+        /// <summary>
+        /// حرکت کنترل با کلیدهای کیبورد
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         //private void MainForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         //{
         //    int x = targetPictureBox.Location.X;
@@ -465,13 +519,17 @@ namespace game1
         //    targetPictureBox.Location = new System.Drawing.Point(x, y);
         //}
         //************************************
-
+        
         private void MainForm_Load(object sender, System.EventArgs e)
         {
             resetForm();
         }
-
-        // با دکمه های برنامه targetPictureBox حرکت
+        
+        /// <summary>
+        /// با دکمه های برنامه targetPictureBox حرکت
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, System.EventArgs e)
         {
             System.Windows.Forms.Button currentButton;
@@ -490,10 +548,10 @@ namespace game1
                 // کلیک شده یاشد topButton اگر دکمه 
                 case "topButton":
                     {
-                        //  هنوز داخل محدوده است targetPictureBox و
+                        //هنوز داخل محدوده است targetPictureBox و
                         if (targetPictureBox.Top > 0)
                         {
-                            //  را 5 واحد به بالا انتقال می دهیم targetPictureBox
+                            //را 5 واحد به بالا انتقال می دهیم targetPictureBox
                             targetPictureBox.Top = System.Math.Max
                                      (0, targetPictureBox.Top - 5);
                         }
@@ -548,6 +606,11 @@ namespace game1
             }
         }
 
+        /// <summary>
+        /// ریست کردن فرم هنگام تغییر سایز
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Resize(object sender, System.EventArgs e)
         {
             resetForm();
